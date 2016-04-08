@@ -9,9 +9,11 @@
     <title>Getting Started Extension's Popup</title>
     <style>
       body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
         font-size: 100%;
         min-width: 200px;
+        margin:0;
+        padding:0;
       }
       #status {
         /* avoid an excessively wide status text */
@@ -19,6 +21,18 @@
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 400px;
+      }
+      .btn {
+        cursor:pointer;
+        padding: 6px 8px;
+        border-bottom:1px solid rgba(0,0,0,0.1);
+      }
+      .btn:hover {
+        background: #FF7F50;
+        color: #fff;
+      }
+      .btn:last-child {
+        border-bottom:none;
       }
     </style>
 
@@ -32,9 +46,9 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="sendScan">Send Scan</div>
-    <div id="sendScanUPC">Send UPC Scan</div>
-    <div id="sendSwipe">Send Swipe</div>
+    <div id="sendScan" class="btn">Scan Barcode</div>
+    <div id="sendScanUPC" class="btn">Scan UPC</div>
+    <div id="sendSwipe" class="btn">Card Swipe</div>
   </body>
 </html>
 
