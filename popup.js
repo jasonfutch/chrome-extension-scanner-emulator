@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   bgPort.postMessage({"action":"register"});
 
   $('#sendScan').click(function(){
-    keyPress('454544444',true)
+    keyPress('98798744',true)
   });
 
   $('#sendScanUPC').click(function(){

@@ -10,7 +10,7 @@
     <style>
       body {
         font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-        font-size: 100%;
+        font-size: 12px;
         min-width: 200px;
         margin:0;
         padding:0;
@@ -34,6 +34,34 @@
       .btn:last-child {
         border-bottom:none;
       }
+
+      .window{
+        width: 320px;
+        height: 360px;
+      }
+      .window-header{
+        height: 40px;
+        line-height: 40px;
+        padding:0 10px;
+      }
+      .window-footer{
+        height: 40px;
+      }
+      .window-body{
+        height: 280px;
+        overflow: hidden;
+      }
+
+      .window-header.active{
+        background-color:#b6d7a8;
+        color:#274e13
+      }
+      .window-footer > button{
+        margin:0;
+        display:inline;
+        width:150px;
+        height:40px;
+      }
     </style>
 
     <!--
@@ -46,9 +74,39 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="sendScan" class="btn">Scan Barcode</div>
-    <div id="sendScanUPC" class="btn">Scan UPC</div>
-    <div id="sendSwipe" class="btn">Card Swipe</div>
+    <div class="window">
+      <div class="window-header active">
+        Active Connection to web page.
+      </div>
+      <div class="window-body">
+        <p>Click a button below to emulate the chosen device.</p>
+        <div>
+          <h2>Barcode Scanner</h2>
+          <div>
+            <button id="sendScan">Scan #1</button>
+            <button id="sendScanUPC">Scan #2</button>
+            <button>Scan #3</button>
+            <button>Scan #4</button>
+          </div>
+        </div>
+        <div>
+          <h2>Magnetic Strip Reader (MSR)</h2>
+          <div>
+            <button id="sendSwipe">Swipe #1</button>
+            <button>Swipe #2</button>
+            <button>Swipe #3</button>
+            <button>Swipe #4</button>
+          </div>
+        </div>
+      </div>
+      <div class="window-footer">
+          <button>About</button>
+          <button>Settings</button>
+      </div>
+    </div>
+    <!--<div id="sendScan" class="btn">Scan Barcode</div>-->
+    <!--<div id="sendScanUPC" class="btn">Scan UPC</div>-->
+    <!--<div id="sendSwipe" class="btn">Card Swipe</div>-->
   </body>
 </html>
 
