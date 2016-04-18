@@ -6,6 +6,8 @@ bgPort.onMessage.addListener(function(msg) {
             var fetchResponse = new CustomEvent('fetchResponse', {"detail":msg});
             document.dispatchEvent(fetchResponse);
             break;
+        case "ping":
+            //do nothing
     }
 });
 

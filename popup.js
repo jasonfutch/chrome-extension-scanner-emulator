@@ -6,6 +6,7 @@ function renderStatus(statusText) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
   bgPort = chrome.runtime.connect({name: "popup->background"});
 
   //register port with background.js
