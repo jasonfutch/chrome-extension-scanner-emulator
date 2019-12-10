@@ -9,12 +9,33 @@
     <title>Getting Started Extension's Popup</title>
     <style>
       body {
-        font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-        font-size: 12px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
         min-width: 200px;
         margin:0;
-        padding:0;
+        padding:16px;
       }
+      h2 {
+        margin: 0 0 8px;
+        color: #555;
+        font-weight: 500;
+        font-size: 1.2em;
+      }
+      
+      button {
+        border: 1px solid rgba(0,0,0,0.15);
+        border-radius: 0.25em;
+        padding: 4px 12px 5px;
+        font-size: 0.9em;
+        color: #555;
+        font-weight: 500;
+        outline : none !important;
+      }
+      button:hover {
+        background: #01c1c3;
+        color: #fff;
+      }
+      
       #status {
         /* avoid an excessively wide status text */
         white-space: pre;
@@ -37,7 +58,7 @@
 
       .window{
         width: 320px;
-        height: 360px;
+        /*height: 360px;*/
       }
       .window-header{
         height: 40px;
@@ -45,10 +66,12 @@
         padding:0 10px;
       }
       .window-footer{
-        height: 40px;
+        /*height: 40px;*/
+        text-align:center;
+        display : none;
       }
       .window-body{
-        height: 280px;
+        /*height: 280px;*/
         overflow: hidden;
       }
 
@@ -73,31 +96,70 @@
     <script src="jquery-2.2.2.min.js"></script>
     <script src="popup.js"></script>
   </head>
+  
   <body>
     <div class="window">
-      <div class="window-header active">
-        Active Connection to web page.
-      </div>
+      <!--<div class="window-header active">-->
+        <!--Active Connection to web page.-->
+      <!--</div>-->
       <div class="window-body">
-        <p>Click a button below to emulate the chosen device.</p>
-        <div>
+        <!--<p>Click a button below to emulate the chosen device.</p>-->
+        <div style="padding-bottom:16px;">
           <h2>Barcode Scanner</h2>
           <div>
-            <button id="sendScan">Scan #1</button>
-            <button id="sendScanUPC">Scan #2</button>
-            <button>Scan #3</button>
-            <button>Scan #4</button>
+            <button id="sendScan">Scan SKU</button>
+            <button id="sendScanUPC">Scan UPC</button>
+            <button class="sendSwipe" value="60064970382499003755343">Gift Card</button>
+            <!--<button>Scan #3</button>-->
+            <!--<button>Scan #4</button>-->
           </div>
         </div>
-        <div>
-          <h2>Magnetic Strip Reader (MSR)</h2>
+        
+        <div style="padding-bottom:16px;">
+          <h2>MagStrip Reader (Valid)</h2>
           <div>
-            <button id="sendSwipe">Swipe #1</button>
-            <button>Swipe #2</button>
-            <button>Swipe #3</button>
-            <button>Swipe #4</button>
+            <button class="sendSwipe" value="4111111111111111=191110110000667">Visa</button>
+            <!--<button class="sendSwipe" value="">Swipe #2</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #3</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #4</button>-->
           </div>
         </div>
+        
+        <div style="padding-bottom:16px;">
+          <h2>Reference Codes (Orders/Fulfillments)</h2>
+          <div>
+            <button class="sendSwipe" value="MKQAHU8K5">Fulfillment</button>
+            <button class="sendSwipe" value="SCNAS00006075">Order</button>
+            <!--<button class="sendSwipe" value="">Swipe #2</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #3</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #4</button>-->
+          </div>
+        </div>
+        
+        
+        
+        <!--<div style="padding-bottom:16px;">-->
+          <!--<h2>MagStrip Reader (Invalid)</h2>-->
+          <!--<div>-->
+            <!--<button class="sendSwipe" value="">Visa</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #2</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #3</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #4</button>-->
+          <!--</div>-->
+        <!--</div>-->
+        
+        
+        <!--<div style="padding-bottom:16px;">-->
+          <!--<h2>MagStrip Reader (w/Issues)</h2>-->
+          <!--<div>-->
+            <!--<button class="sendSwipe" value="">Visa</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #2</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #3</button>-->
+            <!--<button class="sendSwipe" value="">Swipe #4</button>-->
+          <!--</div>-->
+        <!--</div>-->
+        
+        
       </div>
       <div class="window-footer">
           <button>About</button>
